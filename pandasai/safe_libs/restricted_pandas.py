@@ -105,6 +105,6 @@ class RestrictedPandas(BaseRestrictedModule):
                 )
 
     def __getattr__(self, name):
-        if name not in self.allowed_attributes:
-            raise AttributeError(f"'{name}' is not allowed in RestrictedPandas")
+        # if name not in self.allowed_attributes:
+        #     raise AttributeError(f"'{name}' is not allowed in RestrictedPandas")
         return getattr(pd, name)

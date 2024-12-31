@@ -77,19 +77,10 @@ def get_environment(additional_deps: List[dict]) -> dict:
     env["pd"] = RestrictedPandas()
     env["plt"] = RestrictedMatplotlib()
     env["np"] = RestrictedNumpy()
-
-    for lib in additional_deps:
-        if lib["name"] == "seaborn":
-            env["sns"] = RestrictedSeaborn()
-
-        if lib["name"] == "datetime":
-            env["datetime"] = RestrictedDatetime()
-
-        if lib["name"] == "json":
-            env["json"] = RestrictedJson()
-
-        if lib["name"] == "base64":
-            env["base64"] = RestrictedBase64()
+    env["sns"] = RestrictedSeaborn()
+    env["datetime"] = RestrictedDatetime()
+    env["json"] = RestrictedJson()
+    env["base64"] = RestrictedBase64()
 
     return env
 

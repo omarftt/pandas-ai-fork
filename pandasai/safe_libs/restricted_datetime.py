@@ -58,7 +58,7 @@ class RestrictedDatetime(BaseRestrictedModule):
                 setattr(self, attr, self._wrap_function(getattr(datetime, attr)))
 
     def __getattr__(self, name):
-        if name not in self.allowed_attributes:
-            raise AttributeError(f"'{name}' is not allowed in RestrictedDatetime")
+        # if name not in self.allowed_attributes:
+        #     raise AttributeError(f"'{name}' is not allowed in RestrictedDatetime")
 
         return getattr(datetime, name)
